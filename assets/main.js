@@ -132,41 +132,18 @@
     });
   }
 
-  // hero console: pointer tilt, click/keyboard "manual scan", live uptime
-  var heroConsole = document.getElementById('heroConsole');
-  var consoleHint = document.getElementById('consoleHint');
-  if (heroConsole) {
-    if (window.matchMedia('(pointer: fine)').matches && !prefersReduced) {
-      heroConsole.addEventListener('pointermove', function (e) {
-        var r = heroConsole.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width - .5;
-        var py = (e.clientY - r.top) / r.height - .5;
-        heroConsole.style.transform = 'perspective(1400px) rotateX(' + (-py * 8) + 'deg) rotateY(' + (px * 10) + 'deg)';
-      });
-      heroConsole.addEventListener('pointerleave', function () { heroConsole.style.transform = ''; });
+  // hero airspace scene: gentle live-data feel on the stat panels (illustrative, not real telemetry)
+  if (!prefersReduced) {
+    var statSignals = document.getElementById('statSignals');
+    var statDistance = document.getElementById('statDistance');
+    var statAltitude = document.getElementById('statAltitude');
+    if (statSignals || statDistance || statAltitude) {
+      setInterval(function () {
+        if (statSignals) statSignals.textContent = 4 + Math.floor(Math.random() * 3);
+        if (statDistance) statDistance.textContent = (2.1 + Math.random() * 0.6).toFixed(1) + ' km';
+        if (statAltitude) statAltitude.textContent = (110 + Math.floor(Math.random() * 25)) + ' m';
+      }, 2600);
     }
-    function triggerManualScan() {
-      heroConsole.classList.add('manual-ping');
-      if (consoleHint) consoleHint.textContent = 'Scanning…';
-      setTimeout(function () {
-        heroConsole.classList.remove('manual-ping');
-        if (consoleHint) consoleHint.textContent = 'Click to scan';
-      }, 1100);
-    }
-    heroConsole.addEventListener('click', triggerManualScan);
-    heroConsole.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); triggerManualScan(); }
-    });
-  }
-  var uptimeEl = document.getElementById('uptimeReadout');
-  if (uptimeEl) {
-    var startTime = Date.now();
-    setInterval(function () {
-      var secs = Math.floor((Date.now() - startTime) / 1000);
-      var mm = String(Math.floor(secs / 60)).padStart(2, '0');
-      var ss = String(secs % 60).padStart(2, '0');
-      uptimeEl.textContent = mm + ':' + ss;
-    }, 1000);
   }
 
   // parallax: deployment photo drift on scroll

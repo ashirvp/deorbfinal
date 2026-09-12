@@ -24,7 +24,10 @@
         <a href="#hardware">Hardware</a>
         <a href="#company">Company</a>
       </nav>
-      <div class="nav-cta"><a href="mailto:info@de-orb.com" class="btn-outline">Request a Briefing</a></div>
+      <div class="nav-cta">
+        <a href="mailto:info@de-orb.com" class="btn-outline">Request a Briefing</a>
+        <span class="lang-select" aria-label="Language: English">EN <svg viewBox="0 0 10 6" width="10" height="6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
@@ -39,68 +42,129 @@
 
   <!-- HERO -->
   <section class="hero" id="top">
-    <div class="hero-bg"></div>
-    <div class="wrap hero-inner">
-      <div class="hero-max">
-        <p class="eyebrow reveal">PASSIVE COUNTER-UAS INTELLIGENCE</p>
-        <h1 class="reveal">See every threat.<br><em>Emit nothing.</em></h1>
-        <p class="subhead reveal">DE ORB fuses RF, acoustic and optical sensing into one silent layer of airspace
-          awareness, built for contested skies over Europe's critical assets.</p>
-        <div class="hero-cta reveal">
-          <a href="mailto:info@de-orb.com" class="btn-primary">Request a Briefing</a>
-          <a href="#platform" class="btn-ghost">Explore the Platform</a>
+    <div class="hero-text">
+      <p class="eyebrow reveal">PASSIVE COUNTER-UAS INTELLIGENCE</p>
+      <h1 class="reveal">See every threat.<br><em>Emit nothing.</em></h1>
+      <p class="subhead reveal">DE ORB fuses RF, acoustic and optical sensing into one silent layer of airspace
+        awareness, built for contested skies over Europe's critical assets.</p>
+      <div class="hero-cta reveal">
+        <a href="mailto:info@de-orb.com" class="btn-primary">Request a Briefing <svg viewBox="0 0 16 10" width="15" height="9"><path d="M1 5h13.5M9.5 1l4.5 4-4.5 4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="#platform" class="btn-ghost">Explore the Platform</a>
+      </div>
+      <div class="feature-strip reveal stagger">
+        <div class="feature-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 4l16 16M8.5 8.5a5 5 0 0 1 7 7M5 12a10 10 0 0 1 2.6-6.7M19 12a10 10 0 0 1-2.6 6.7"/></svg>
+          <div><strong>Passive Detection</strong><span>No emissions</span></div>
         </div>
+        <div class="feature-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9.5" cy="12" r="6.5"/><circle cx="15" cy="12" r="6.5"/></svg>
+          <div><strong>Multi-Sensor Fusion</strong><span>RF / Acoustic / EO-IR</span></div>
+        </div>
+        <div class="feature-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".8" fill="currentColor" stroke="none"/></svg>
+          <div><strong>AI-Powered Classification</strong><span>Real-time insights</span></div>
+        </div>
+        <div class="feature-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.7-7 10-4-2.3-7-5.5-7-10V6l7-3z"/></svg>
+          <div><strong>Built for Critical Environments</strong><span>Airports / Cities / Military</span></div>
+        </div>
+      </div>
+      <div class="scroll-cue reveal">
+        <span class="scroll-track"><span class="scroll-fill"></span></span>
+        SCROLL TO EXPLORE
+        <svg viewBox="0 0 12 8" width="12" height="8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
     </div>
 
-    <!-- HERO CONSOLE: custom sensor-mesh visual, not used anywhere else on the site -->
-    <div class="hero-console-wrap reveal" id="heroConsoleWrap">
-      <div class="hero-console" id="heroConsole" role="button" tabindex="0" aria-label="Interactive preview of DE ORB's sensor-fusion network. Click to trigger a manual scan.">
-        <div class="console-grid"></div>
-        <div class="console-vignette"></div>
-        <div class="console-scanline"></div>
-
-        <svg class="console-mesh" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-          <line class="mesh-line" x1="51" y1="57" x2="20" y2="22"/>
-          <line class="mesh-line" x1="51" y1="57" x2="78" y2="18"/>
-          <line class="mesh-line" x1="51" y1="57" x2="15" y2="74"/>
-          <line class="mesh-line" x1="51" y1="57" x2="82" y2="68"/>
+    <!-- HERO VISUAL: original illustrated airspace scene, built for this design — no stock imagery -->
+    <div class="hero-visual reveal" id="heroVisual">
+      <div class="airspace-scene">
+        <div class="scene-sky"></div>
+        <svg class="scene-terrain" viewBox="0 0 800 420" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 300 L90 220 L170 270 L260 170 L340 240 L430 150 L520 235 L610 190 L700 260 L800 210 L800 420 L0 420 Z" fill="var(--surface-2)" opacity=".8"/>
+          <path d="M0 340 L120 280 L230 330 L330 250 L450 310 L560 260 L660 320 L800 270 L800 420 L0 420 Z" fill="var(--surface)"/>
+        </svg>
+        <div class="scene-grid"></div>
+        <svg class="scene-network" viewBox="0 0 800 420" preserveAspectRatio="none" aria-hidden="true">
+          <g class="net-lines" stroke="var(--teal)" stroke-width="1" stroke-dasharray="3 5" fill="none" opacity=".4">
+            <path d="M120 330 L300 260 L480 300 L640 235"/>
+            <path d="M300 260 L360 130"/>
+            <path d="M480 300 L560 380"/>
+          </g>
+          <g class="net-nodes" fill="var(--teal)">
+            <circle cx="120" cy="330" r="4"/>
+            <circle cx="300" cy="260" r="4"/>
+            <circle cx="480" cy="300" r="4"/>
+            <circle cx="640" cy="235" r="4"/>
+            <circle cx="360" cy="130" r="4"/>
+            <circle cx="560" cy="380" r="4"/>
+          </g>
         </svg>
 
-        <div class="mesh-node" style="left:20%;top:22%"><span class="tip">NODE-01</span></div>
-        <div class="mesh-node" style="left:78%;top:18%"><span class="tip">NODE-02</span></div>
-        <div class="mesh-node" style="left:15%;top:74%"><span class="tip">NODE-03</span></div>
-        <div class="mesh-node" style="left:82%;top:68%"><span class="tip">NODE-04</span></div>
-        <div class="mesh-node hub" style="left:51%;top:57%"><span class="tip">DE ORB OS · FUSION HUB</span></div>
-
-        <div class="track-trail t4" aria-hidden="true"><div class="glyph"></div></div>
-        <div class="track-trail t3" aria-hidden="true"><div class="glyph"></div></div>
-        <div class="track-trail t2" aria-hidden="true"><div class="glyph"></div></div>
-        <div class="track-trail t1" aria-hidden="true"><div class="glyph"></div></div>
-        <div class="console-ping" aria-hidden="true"></div>
-
-        <span class="console-tag live"><span class="rec"></span>SIMULATION</span>
-        <span class="console-hint" id="consoleHint">Click to scan</span>
-        <p class="console-note">Illustrative network preview — not live sensor data.</p>
-      </div>
-
-      <div class="console-readouts">
-        <div class="readout-chip">
-          <span class="rl">RF ACTIVITY</span>
-          <div class="wave-bars"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="mini-drone md1" aria-hidden="true">
+          <svg viewBox="0 0 60 60"><g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" opacity=".55"><line x1="16" y1="16" x2="44" y2="44"/><line x1="44" y1="16" x2="16" y2="44"/></g><circle cx="30" cy="30" r="6" fill="var(--ink)" opacity=".55"/></svg>
         </div>
-        <div class="readout-chip">
-          <span class="rl">NODES ONLINE</span>
-          <span class="rv"><span class="readout-dot"></span>04 / 04</span>
+        <div class="mini-drone md2" aria-hidden="true">
+          <svg viewBox="0 0 60 60"><g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" opacity=".55"><line x1="16" y1="16" x2="44" y2="44"/><line x1="44" y1="16" x2="16" y2="44"/></g><circle cx="30" cy="30" r="6" fill="var(--ink)" opacity=".55"/></svg>
         </div>
-        <div class="readout-chip">
-          <span class="rl">SESSION UPTIME</span>
-          <span class="rv" id="uptimeReadout">00:00</span>
+        <div class="mini-drone md3" aria-hidden="true">
+          <svg viewBox="0 0 60 60"><g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" opacity=".55"><line x1="16" y1="16" x2="44" y2="44"/><line x1="44" y1="16" x2="16" y2="44"/></g><circle cx="30" cy="30" r="6" fill="var(--ink)" opacity=".55"/></svg>
         </div>
+        <div class="lock-cycle" aria-hidden="true"><span class="lc-corner tl"></span><span class="lc-corner tr"></span><span class="lc-corner bl"></span><span class="lc-corner br"></span></div>
+
+        <div class="drone-hero" aria-hidden="true">
+          <div class="drone-rings"></div>
+          <svg viewBox="0 0 260 190" class="drone-svg">
+            <ellipse cx="130" cy="150" rx="70" ry="10" fill="var(--ink)" opacity=".08"/>
+            <g stroke="var(--ink)" stroke-width="5" stroke-linecap="round">
+              <line x1="80" y1="70" x2="40" y2="40"/>
+              <line x1="180" y1="70" x2="220" y2="40"/>
+              <line x1="85" y1="105" x2="45" y2="130"/>
+              <line x1="175" y1="105" x2="215" y2="130"/>
+            </g>
+            <g class="prop-blur">
+              <ellipse cx="40" cy="40" rx="26" ry="9" fill="var(--teal)" opacity=".16"/>
+              <ellipse cx="220" cy="40" rx="26" ry="9" fill="var(--teal)" opacity=".16"/>
+              <ellipse cx="45" cy="130" rx="26" ry="9" fill="var(--teal)" opacity=".16"/>
+              <ellipse cx="215" cy="130" rx="26" ry="9" fill="var(--teal)" opacity=".16"/>
+            </g>
+            <g class="prop-blade" style="transform-origin:40px 40px"><line x1="14" y1="40" x2="66" y2="40" stroke="var(--muted)" stroke-width="2"/></g>
+            <g class="prop-blade" style="transform-origin:220px 40px"><line x1="194" y1="40" x2="246" y2="40" stroke="var(--muted)" stroke-width="2"/></g>
+            <g class="prop-blade" style="transform-origin:45px 130px"><line x1="19" y1="130" x2="71" y2="130" stroke="var(--muted)" stroke-width="2"/></g>
+            <g class="prop-blade" style="transform-origin:215px 130px"><line x1="189" y1="130" x2="241" y2="130" stroke="var(--muted)" stroke-width="2"/></g>
+            <g fill="var(--ink)"><circle cx="40" cy="40" r="6"/><circle cx="220" cy="40" r="6"/><circle cx="45" cy="130" r="6"/><circle cx="215" cy="130" r="6"/></g>
+            <rect x="95" y="65" width="70" height="48" rx="14" fill="var(--ink)"/>
+            <rect x="106" y="52" width="14" height="16" rx="4" fill="var(--ink)"/>
+            <circle cx="130" cy="60" r="4" fill="var(--danger)" class="status-led"/>
+            <circle cx="130" cy="120" r="15" fill="var(--ink)"/>
+            <circle cx="130" cy="120" r="9" fill="var(--teal-deep)"/>
+            <circle cx="130" cy="120" r="4" fill="#cdeef0"/>
+          </svg>
+        </div>
+
+        <div class="panel-airspace glass-card reveal">
+          <p class="pa-head"><span class="pa-dot"></span>LIVE AIRSPACE</p>
+          <div class="pa-row"><span class="pa-swatch danger"></span><span class="pa-val" id="statUas">3</span><span class="pa-lab">UAS DETECTED</span></div>
+          <div class="pa-row"><span class="pa-swatch cyan"></span><span class="pa-val">0</span><span class="pa-lab">AIRCRAFT</span></div>
+          <div class="pa-row"><span class="pa-swatch teal"></span><span class="pa-val">0</span><span class="pa-lab">HELICOPTERS</span></div>
+          <div class="pa-row"><span class="pa-swatch blue"></span><span class="pa-val" id="statSignals">5</span><span class="pa-lab">OTHER SIGNALS</span></div>
+        </div>
+
+        <div class="panel-detected glass-card reveal">
+          <p class="pd-head"><span class="pd-dot"></span>UAS DETECTED</p>
+          <div class="pd-row"><span>Classification:</span><strong>Quadcopter</strong></div>
+          <div class="pd-row"><span>Distance:</span><strong id="statDistance">2.4 km</strong></div>
+          <div class="pd-row"><span>Altitude:</span><strong id="statAltitude">120 m</strong></div>
+        </div>
+
+        <span class="pin-badge pin-airport"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21l7-3 7 3 4-1.5L3 4z"/></svg>AIRPORT</span>
+        <span class="pin-badge pin-infra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V9l8-5 8 5v12M9 21v-6h6v6"/></svg>CRITICAL INFRASTRUCTURE</span>
+        <span class="pin-badge pin-city"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V8l5-3 5 3v13M14 21v-9l6 3v6"/></svg>CITY</span>
+
+        <div class="coverage-label"><span class="cov-tick"></span>COVERAGE<br>UP TO 50 KM</div>
+        <div class="scene-tagline">DETECT&nbsp;&middot;&nbsp;ANALYZE&nbsp;&middot;&nbsp;PROTECT</div>
       </div>
     </div>
-
-    <div class="scroll-cue">SCROLL</div>
   </section>
 
   <!-- MARQUEE -->
