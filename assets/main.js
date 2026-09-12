@@ -132,50 +132,19 @@
     });
   }
 
-  // hero console: pointer tilt, click/keyboard "manual scan", live uptime
-  var heroConsole = document.getElementById('heroConsole');
-  var consoleHint = document.getElementById('consoleHint');
-  if (heroConsole) {
-    if (window.matchMedia('(pointer: fine)').matches && !prefersReduced) {
-      heroConsole.addEventListener('pointermove', function (e) {
-        var r = heroConsole.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width - .5;
-        var py = (e.clientY - r.top) / r.height - .5;
-        heroConsole.style.transform = 'perspective(1400px) rotateX(' + (-py * 8) + 'deg) rotateY(' + (px * 10) + 'deg)';
-      });
-      heroConsole.addEventListener('pointerleave', function () { heroConsole.style.transform = ''; });
-    }
-    function triggerManualScan() {
-      heroConsole.classList.add('manual-ping');
-      if (consoleHint) consoleHint.textContent = 'Scanning…';
-      setTimeout(function () {
-        heroConsole.classList.remove('manual-ping');
-        if (consoleHint) consoleHint.textContent = 'Click to scan';
-      }, 1100);
-    }
-    heroConsole.addEventListener('click', triggerManualScan);
-    heroConsole.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); triggerManualScan(); }
-    });
-  }
-  var uptimeEl = document.getElementById('uptimeReadout');
-  if (uptimeEl) {
-    var startTime = Date.now();
-    setInterval(function () {
-      var secs = Math.floor((Date.now() - startTime) / 1000);
-      var mm = String(Math.floor(secs / 60)).padStart(2, '0');
-      var ss = String(secs % 60).padStart(2, '0');
-      uptimeEl.textContent = mm + ':' + ss;
-    }, 1000);
-  }
-
-  // parallax: deployment photo drift on scroll
+  // parallax: hero scene drift + deployment photo drift on scroll
+  var heroVisualFrame = document.getElementById('heroVisualFrame');
   var deployImg = document.getElementById('deployImg');
   var deployMedia = document.querySelector('.deploy-media');
   var ticking = false;
   function updateParallax() {
     ticking = false;
     updateHwChapter();
+    if (heroVisualFrame) {
+      var heroRect = heroVisualFrame.closest('.hero').getBoundingClientRect();
+      var shift = Math.max(-30, Math.min(0, heroRect.top * 0.06));
+      heroVisualFrame.style.transform = prefersReduced ? '' : 'translateY(' + shift.toFixed(1) + 'px)';
+    }
     if (prefersReduced) return;
     var vh = window.innerHeight;
     if (deployImg && deployMedia) {

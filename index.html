@@ -53,50 +53,11 @@
       </div>
     </div>
 
-    <!-- HERO CONSOLE: custom sensor-mesh visual, not used anywhere else on the site -->
-    <div class="hero-console-wrap reveal" id="heroConsoleWrap">
-      <div class="hero-console" id="heroConsole" role="button" tabindex="0" aria-label="Interactive preview of DE ORB's sensor-fusion network. Click to trigger a manual scan.">
-        <div class="console-grid"></div>
-        <div class="console-vignette"></div>
-        <div class="console-scanline"></div>
-
-        <svg class="console-mesh" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-          <line class="mesh-line" x1="51" y1="57" x2="20" y2="22"/>
-          <line class="mesh-line" x1="51" y1="57" x2="78" y2="18"/>
-          <line class="mesh-line" x1="51" y1="57" x2="15" y2="74"/>
-          <line class="mesh-line" x1="51" y1="57" x2="82" y2="68"/>
-        </svg>
-
-        <div class="mesh-node" style="left:20%;top:22%"><span class="tip">NODE-01</span></div>
-        <div class="mesh-node" style="left:78%;top:18%"><span class="tip">NODE-02</span></div>
-        <div class="mesh-node" style="left:15%;top:74%"><span class="tip">NODE-03</span></div>
-        <div class="mesh-node" style="left:82%;top:68%"><span class="tip">NODE-04</span></div>
-        <div class="mesh-node hub" style="left:51%;top:57%"><span class="tip">DE ORB OS · FUSION HUB</span></div>
-
-        <div class="track-trail t4" aria-hidden="true"><div class="glyph"></div></div>
-        <div class="track-trail t3" aria-hidden="true"><div class="glyph"></div></div>
-        <div class="track-trail t2" aria-hidden="true"><div class="glyph"></div></div>
-        <div class="track-trail t1" aria-hidden="true"><div class="glyph"></div></div>
-        <div class="console-ping" aria-hidden="true"></div>
-
-        <span class="console-tag live"><span class="rec"></span>SIMULATION</span>
-        <span class="console-hint" id="consoleHint">Click to scan</span>
-        <p class="console-note">Illustrative network preview — not live sensor data.</p>
-      </div>
-
-      <div class="console-readouts">
-        <div class="readout-chip">
-          <span class="rl">RF ACTIVITY</span>
-          <div class="wave-bars"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-        </div>
-        <div class="readout-chip">
-          <span class="rl">NODES ONLINE</span>
-          <span class="rv"><span class="readout-dot"></span>04 / 04</span>
-        </div>
-        <div class="readout-chip">
-          <span class="rl">SESSION UPTIME</span>
-          <span class="rv" id="uptimeReadout">00:00</span>
-        </div>
+    <!-- HERO VISUAL: illustrated drone/airspace scene -->
+    <div class="hero-visual-wrap reveal" id="heroVisualWrap">
+      <div class="hero-visual-frame" id="heroVisualFrame">
+        <img src="assets/img/hero-scene.webp" alt="Illustration of a DE ORB drone detection scene: a quadcopter tracked above an airport and city skyline, with additional aircraft detected in the distance" width="893" height="761" loading="eager" fetchpriority="high">
+        <span class="scene-pulse" style="left:31%; top:28%" aria-hidden="true"></span>
       </div>
     </div>
 
