@@ -247,8 +247,20 @@ p { line-height: 1.65; }
 
 .eyebrow { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .28em; color: var(--teal); margin-bottom: 22px; }
 
-.hero h1 { font-size: clamp(40px, 7vw, 78px); }
+.hero h1 { font-size: clamp(40px, 7vw, 78px); perspective: 700px; }
 .hero h1 em { font-style: normal; color: var(--teal); }
+
+/* headline word-stagger reveal — motion values from the ui-ux-pro-max GSAP
+   "Stagger List / Complex" preset (opacity+y+rotateX, expo-out, ~stagger),
+   implemented in plain CSS/JS since this site loads no animation library. */
+.word-reveal {
+  display: inline-block; opacity: 0;
+  transform: translateY(22px) rotateX(-45deg);
+  transform-origin: 50% 100%;
+  animation: wordReveal .7s cubic-bezier(.16, 1, .3, 1) forwards;
+  animation-delay: var(--wd, 0s);
+}
+@keyframes wordReveal { to { opacity: 1; transform: translateY(0) rotateX(0deg); } }
 
 .subhead { margin-top: 28px; font-size: clamp(16px, 2vw, 19px); color: var(--muted); max-width: 600px; }
 
@@ -603,10 +615,11 @@ footer { background: var(--paper); border-top: 1px solid var(--line); }
 @media (prefers-reduced-motion: reduce) {
   .sweep, .ring, .core, .wordmark i, .scroll-cue::after, .btn-primary::after,
   .marquee-track, .radar-sweep-2, .node-pulse, .drone-track, .drone-body, .rotor, .lock-box, .telemetry, .tele-dot,
-  .hero-visual-frame img, .scene-pulse::before, .scene-pulse::after {
+  .hero-visual-frame img, .scene-pulse::before, .scene-pulse::after, .word-reveal {
     animation: none !important;
   }
   .reveal, .line-draw { opacity: 1; transform: none; transition: none; }
+  .word-reveal { opacity: 1 !important; transform: none !important; }
   .hardware-frame img { transform: none !important; transition: none; }
   .deploy-img { transform: none !important; }
   .drone-track { left: 50% !important; top: 28% !important; }

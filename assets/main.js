@@ -30,6 +30,31 @@
     });
   });
 
+  // headline word-stagger reveal (see assets/style.css .word-reveal for the motion values)
+  var headline = document.getElementById('heroHeadline');
+  if (headline) {
+    var walker = document.createTreeWalker(headline, NodeFilter.SHOW_TEXT);
+    var textNodes = [];
+    var node;
+    while ((node = walker.nextNode())) textNodes.push(node);
+    var wordIndex = 0;
+    textNodes.forEach(function (textNode) {
+      var parts = textNode.textContent.split(/(\s+)/);
+      var frag = document.createDocumentFragment();
+      parts.forEach(function (part) {
+        if (part === '') return;
+        if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+        var span = document.createElement('span');
+        span.className = 'word-reveal';
+        span.style.setProperty('--wd', (0.15 + wordIndex * 0.07) + 's');
+        span.textContent = part;
+        frag.appendChild(span);
+        wordIndex++;
+      });
+      textNode.parentNode.replaceChild(frag, textNode);
+    });
+  }
+
   // reveal on scroll
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
