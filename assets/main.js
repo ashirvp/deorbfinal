@@ -121,6 +121,17 @@
     });
   }
 
+  // glass-card spotlight: track pointer position for the radial-gradient glow
+  if (window.matchMedia('(pointer: fine)').matches) {
+    document.querySelectorAll('.glass-card').forEach(function (el) {
+      el.addEventListener('pointermove', function (e) {
+        var r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
+  }
+
   // parallax: hero radar drift + deployment photo drift, batched into one rAF loop
   var radarStage = document.querySelector('.radar-stage');
   var deployImg = document.getElementById('deployImg');
