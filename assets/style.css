@@ -214,9 +214,8 @@ p { line-height: 1.65; }
   position: absolute; left: max(800px, calc(50% + 180px)); right: 0; top: 0; bottom: 0; z-index: 1;
 }
 @media (max-width: 960px) {
-  .hero-visual-wrap { position: relative; left: auto; right: auto; top: auto; bottom: auto; width: 100%; height: 380px; margin-top: 28px; }
+  .hero-visual-wrap { display: none; }
 }
-@media (max-width: 640px) { .hero-visual-wrap { height: 300px; } }
 
 .hero-visual-frame { position: relative; width: 100%; height: 100%; overflow: hidden; }
 .hero-visual-frame img {
