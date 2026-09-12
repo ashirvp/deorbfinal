@@ -21,6 +21,7 @@
         <a href="#platform">Platform</a>
         <a href="solution.html">Solutions</a>
         <a href="#technology">Technology</a>
+        <a href="#hardware">Hardware</a>
         <a href="#company">Company</a>
       </nav>
       <div class="nav-cta"><a href="mailto:info@de-orb.com" class="btn-outline">Request a Briefing</a></div>
@@ -31,6 +32,7 @@
     <a href="#platform">Platform</a>
     <a href="solution.html">Solutions</a>
     <a href="#technology">Technology</a>
+    <a href="#hardware">Hardware</a>
     <a href="#company">Company</a>
     <a href="mailto:info@de-orb.com" class="btn-outline">Request a Briefing</a>
   </div>
@@ -80,22 +82,22 @@
     <div class="wrap">
       <p class="label reveal" style="margin-bottom:56px">CAPABILITIES</p>
       <div class="caps stagger">
-        <div class="cap reveal">
+        <div class="cap reveal tilt-3d">
           <div class="num">01</div>
           <h3>Passive by design</h3>
           <p>No emissions. Nothing for a threat to detect, jam or target.</p>
         </div>
-        <div class="cap reveal">
+        <div class="cap reveal tilt-3d">
           <div class="num">02</div>
           <h3>Multi-sensor fusion</h3>
           <p>RF, acoustic and EO-IR combined into a single confident track.</p>
         </div>
-        <div class="cap reveal">
+        <div class="cap reveal tilt-3d">
           <div class="num">03</div>
           <h3>Autonomous classification</h3>
           <p>AI separates real drone threats from birds, clutter and noise.</p>
         </div>
-        <div class="cap reveal">
+        <div class="cap reveal tilt-3d">
           <div class="num">04</div>
           <h3>Sovereign and deployable</h3>
           <p>Built in Europe. Rapid to install. No fixed infrastructure required.</p>
@@ -104,10 +106,110 @@
     </div>
   </section>
 
+  <!-- 3D SENSING ORB -->
+  <section class="pad orb-section bordered">
+    <div class="wrap orb-wrap">
+      <div class="orb-copy reveal">
+        <p class="label">ONE SENSING LAYER</p>
+        <h2>Every domain,<br>one silent orb.</h2>
+        <p class="orb-desc">RF, acoustic and optical sensing fused into a single always-on awareness layer — nothing transmitted, nothing for an adversary to find.</p>
+      </div>
+      <div class="orb-stage reveal" aria-hidden="true">
+        <div class="orb-scene">
+          <div class="orb">
+            <div class="orb-ring" style="transform:rotateX(0deg)"></div>
+            <div class="orb-ring" style="transform:rotateX(35deg)"></div>
+            <div class="orb-ring" style="transform:rotateX(70deg)"></div>
+            <div class="orb-ring" style="transform:rotateX(110deg)"></div>
+            <div class="orb-ring" style="transform:rotateY(35deg)"></div>
+            <div class="orb-ring" style="transform:rotateY(70deg)"></div>
+            <div class="orb-ring" style="transform:rotateY(110deg)"></div>
+            <div class="orb-core"></div>
+          </div>
+        </div>
+        <span class="orb-chip chip-rf">RF</span>
+        <span class="orb-chip chip-acoustic">Acoustic</span>
+        <span class="orb-chip chip-optical">Optical</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HARDWARE SHOWCASE -->
+  <section class="pad hardware-section bordered" id="hardware">
+    <div class="wrap hardware-grid">
+      <div class="hardware-sticky">
+        <div class="hardware-frame tilt-3d rot-0" id="hwFrame">
+          <img src="assets/img/hardware-node.webp" alt="DE ORB sensor node concept — a compact site-mounted unit with RF antennas, a passive-radar receiving panel, an optical camera and an acoustic microphone grille" width="1254" height="1254" loading="lazy">
+        </div>
+        <div class="hardware-thumbs">
+          <button class="hw-thumb active" data-chapter="0" type="button">
+            <img src="assets/img/detail-rf.webp" alt="RF antennas on the sensor node" loading="lazy">
+            <span>RF</span>
+          </button>
+          <button class="hw-thumb" data-chapter="1" type="button">
+            <img src="assets/img/detail-radar.webp" alt="Passive radar receiving panel" loading="lazy">
+            <span>Radar</span>
+          </button>
+          <button class="hw-thumb" data-chapter="2" type="button">
+            <img src="assets/img/detail-camera.webp" alt="Optical camera lens" loading="lazy">
+            <span>Optical</span>
+          </button>
+          <button class="hw-thumb" data-chapter="3" type="button">
+            <img src="assets/img/detail-acoustic.webp" alt="Acoustic microphone grille" loading="lazy">
+            <span>Acoustic</span>
+          </button>
+        </div>
+      </div>
+      <div class="hardware-chapters">
+        <p class="label reveal">THE HARDWARE</p>
+        <h2 class="reveal" style="margin-top:16px;font-size:clamp(28px,4vw,40px)">One node.<br>Four ways of listening.</h2>
+        <div class="hw-chapter active" data-chapter="0">
+          <span class="hw-num">01</span>
+          <h3>RF monitoring</h3>
+          <p>Receiving antennas pick up radio-frequency emissions already present in the environment — no transmission required.</p>
+        </div>
+        <div class="hw-chapter" data-chapter="1">
+          <span class="hw-num">02</span>
+          <h3>Passive radar</h3>
+          <p>An external-signal receiver reads reflections already in the air, turning ambient broadcasts into a detection surface.</p>
+        </div>
+        <div class="hw-chapter" data-chapter="2">
+          <span class="hw-num">03</span>
+          <h3>Optical camera</h3>
+          <p>A high-resolution lens supplies visual confirmation once a track is flagged by the other sensors.</p>
+        </div>
+        <div class="hw-chapter" data-chapter="3">
+          <span class="hw-num">04</span>
+          <h3>Acoustic sensing</h3>
+          <p>A microphone array listens for the sound signature rotors and engines leave in the air.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPLOYMENT PARALLAX -->
+  <section class="deploy-section bordered">
+    <div class="deploy-media">
+      <img class="deploy-img" id="deployImg" src="assets/img/deployment-aerial.webp" alt="Aerial view of an airport, city, port and industrial site — the kind of civilian infrastructure DE ORB is built to protect" width="1672" height="941" loading="lazy">
+      <div class="deploy-overlay"></div>
+      <div class="deploy-tags">
+        <span class="deploy-tag reveal" style="--x:18%; --y:38%">Public spaces</span>
+        <span class="deploy-tag reveal" style="--x:22%; --y:76%">Airport</span>
+        <span class="deploy-tag reveal" style="--x:70%; --y:42%">Energy &amp; industry</span>
+        <span class="deploy-tag reveal" style="--x:86%; --y:64%">Port</span>
+      </div>
+    </div>
+    <div class="wrap deploy-copy">
+      <p class="label reveal">WHERE IT'S NEEDED</p>
+      <h2 class="reveal">Deployed where civilian life happens.</h2>
+      <p class="reveal" style="max-width:560px;color:var(--muted)">Airports, ports, energy sites and public spaces — DE ORB's nodes sit quietly at the places people already depend on.</p>
+    </div>
+  </section>
+
   <!-- SOLUTIONS -->
   <section class="pad bordered" id="solutions">
     <div class="wrap">
-      <div class="solutions-card reveal">
+      <div class="solutions-card reveal tilt-3d">
         <p class="label">SOLUTIONS</p>
         <h2 class="solutions-subhead">One silent layer. Many contested skies.</h2>
         <p class="solutions-quote">“ The question is how will you protect if you can't detect ”</p>
@@ -126,7 +228,7 @@
         <h2>Sense. Fuse. Decide.</h2>
       </div>
       <div class="steps-wrap">
-        <div class="steps-line"></div>
+        <div class="steps-line line-draw"></div>
         <div class="steps stagger">
           <div class="step reveal"><span class="badge">01</span>
             <h3>Sense</h3>
@@ -213,6 +315,7 @@
           <a href="#platform">Platform</a>
           <a href="solution.html">Solutions</a>
           <a href="#technology">Technology</a>
+          <a href="#hardware">Hardware</a>
           <a href="#company">Company</a>
           <a href="#contact">Contact</a>
         </nav>

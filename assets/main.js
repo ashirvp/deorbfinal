@@ -36,7 +36,7 @@
       if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
     });
   }, { threshold: .15, rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  document.querySelectorAll('.reveal, .line-draw').forEach(function (el) { io.observe(el); });
 
   // count-up stats
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -70,4 +70,85 @@
       document.getElementById('sentMsg').style.display = 'block';
     });
   }
+
+  // hardware showcase: sync sticky product shot + thumbs to whichever chapter
+  // sits closest to the reference line — deterministic, unlike threshold-based
+  // IntersectionObserver where several short paragraphs can all cross at once.
+  var hwFrame = document.getElementById('hwFrame');
+  var hwChapters = document.querySelectorAll('.hw-chapter');
+  var hwThumbs = document.querySelectorAll('.hw-thumb');
+  var hwActiveIndex = -1;
+  function setActiveChapter(index) {
+    index = String(index);
+    if (index === hwActiveIndex) return;
+    hwActiveIndex = index;
+    hwChapters.forEach(function (c) { c.classList.toggle('active', c.getAttribute('data-chapter') === index); });
+    hwThumbs.forEach(function (t) { t.classList.toggle('active', t.getAttribute('data-chapter') === index); });
+    if (hwFrame) hwFrame.className = 'hardware-frame tilt-3d rot-' + index;
+  }
+  function updateHwChapter() {
+    if (!hwChapters.length) return;
+    var lineY = window.innerHeight * 0.45;
+    var bestIdx = 0, bestDist = Infinity;
+    hwChapters.forEach(function (c, i) {
+      var r = c.getBoundingClientRect();
+      var dist = Math.abs((r.top + r.height / 2) - lineY);
+      if (dist < bestDist) { bestDist = dist; bestIdx = i; }
+    });
+    setActiveChapter(bestIdx);
+  }
+  hwThumbs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      var idx = t.getAttribute('data-chapter');
+      var target = document.querySelector('.hw-chapter[data-chapter="' + idx + '"]');
+      if (target) target.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'center' });
+      setActiveChapter(idx);
+    });
+  });
+
+  // pointer-driven 3D tilt (desktop, fine-pointer only)
+  if (window.matchMedia('(pointer: fine)').matches && !prefersReduced) {
+    document.querySelectorAll('.tilt-3d').forEach(function (el) {
+      var max = el.classList.contains('hardware-frame') ? 0 : 5; // hardware frame uses scroll-driven rotation instead
+      if (max === 0) return;
+      el.addEventListener('pointermove', function (e) {
+        var r = el.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - .5;
+        var py = (e.clientY - r.top) / r.height - .5;
+        el.style.transform = 'perspective(900px) rotateX(' + (-py * max) + 'deg) rotateY(' + (px * max) + 'deg)';
+      });
+      el.addEventListener('pointerleave', function () { el.style.transform = ''; });
+    });
+  }
+
+  // parallax: hero radar drift + deployment photo drift, batched into one rAF loop
+  var radarStage = document.querySelector('.radar-stage');
+  var deployImg = document.getElementById('deployImg');
+  var deployMedia = document.querySelector('.deploy-media');
+  var ticking = false;
+  function updateParallax() {
+    ticking = false;
+    updateHwChapter();
+    if (prefersReduced) return;
+    var vh = window.innerHeight;
+    if (radarStage) {
+      var heroRect = radarStage.closest('.hero').getBoundingClientRect();
+      var shift = Math.max(-40, Math.min(40, heroRect.top * -0.08));
+      radarStage.style.transform = 'translateY(' + shift.toFixed(1) + 'px)';
+    }
+    if (deployImg && deployMedia) {
+      var rect = deployMedia.getBoundingClientRect();
+      if (rect.bottom > 0 && rect.top < vh) {
+        var progress = (vh - rect.top) / (vh + rect.height);
+        var shift2 = (progress - 0.5) * 70;
+        deployImg.style.setProperty('--parallax', shift2.toFixed(1) + 'px');
+      }
+    }
+  }
+  function requestParallax() {
+    if (!ticking) { requestAnimationFrame(updateParallax); ticking = true; }
+  }
+  window.addEventListener('scroll', requestParallax, { passive: true });
+  window.addEventListener('resize', requestParallax);
+  updateParallax();
 })();
