@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11343e">
+  <meta name="description" content="Explore how DE ORB's passive sensor-fusion concept supports civilian airspace awareness, informed decisions and legally authorised partner responses.">
+  <title>DE ORB — Safeguarding civilian airspace</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./story.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#chapter-node">Skip to the story</a>
+  <header class="masthead">
+    <a class="wordmark" href="index.html" aria-label="DE ORB Home">DE <span>ORB</span><i aria-hidden="true"></i></a>
+    <span class="brand-line">DETECT <b>/</b> UNDERSTAND <b>/</b> ACT</span>
+    <div style="display: flex; gap: 1.5rem; align-items: center;">
+      <a class="context-link" href="index.html">← Back to Main Site</a>
+      <a class="context-link" href="#policy">Policy &amp; sources <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="story" id="story" data-stage="-1">
+      <div class="scene-shell" aria-label="Illustration of passive drone detection over civilian infrastructure">
+        <div class="scene-topline"><span id="scene-heading">THE HARDWARE AT EACH SITE</span><span class="concept-label">ILLUSTRATIVE CONCEPT</span></div>
+        <figure class="node-figure" id="node-figure" aria-label="DE ORB node concept with four labelled passive sensing components">
+          <div class="node-drawing">
+            <img class="node-picture" src="./assets/sensor-node-concept.png" alt="Conceptual box-shaped sensor node on a short mount, with RF antennas, a passive-radar receiving panel, a camera lens and an acoustic microphone grille." width="1254" height="1254" fetchpriority="high">
+            <svg class="node-callout-lines" viewBox="0 0 1000 760" fill="none" aria-hidden="true">
+              <g stroke="#438b97" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M238 145H315L369 170"/>
+                <path d="M761 250H720L596 300"/>
+                <path d="M238 415H335L453 351"/>
+                <path d="M761 490H710L604 432"/>
+              </g>
+              <g fill="#087f8e" stroke="#f7fafb" stroke-width="3">
+                <circle cx="369" cy="170" r="7"/><circle cx="596" cy="300" r="7"/>
+                <circle cx="453" cy="351" r="7"/><circle cx="604" cy="432" r="7"/>
+              </g>
+            </svg>
+            <div class="node-mount-label">SITE-MOUNTED SENSOR NODE</div>
+          </div>
+          <figcaption class="node-labels">
+              <div class="node-callout callout-rf"><span class="callout-number">01</span><strong>RF monitoring</strong><small>Receiving antennas</small></div>
+              <div class="node-callout callout-radar"><span class="callout-number">02</span><strong>Passive radar</strong><small>External-signal receiver</small></div>
+              <div class="node-callout callout-camera"><span class="callout-number">03</span><strong>Optical camera</strong><small>Visual observation</small></div>
+              <div class="node-callout callout-acoustic"><span class="callout-number">04</span><strong>Acoustic sensing</strong><small>Microphone array</small></div>
+          </figcaption>
+        </figure>
+        <div class="world" aria-hidden="true">
+          <img class="district" src="./assets/civilian-district.png" alt="" width="1672" height="941">
+          <svg class="network" viewBox="0 0 1600 1000" fill="none">
+            <defs>
+              <radialGradient id="coverage"><stop offset="0" stop-color="#008e9e" stop-opacity=".08"/><stop offset=".8" stop-color="#008e9e" stop-opacity=".025"/><stop offset="1" stop-color="#008e9e" stop-opacity=".09"/></radialGradient>
+              <linearGradient id="handover" x1="640" y1="340" x2="1180" y2="715" gradientUnits="userSpaceOnUse"><stop stop-color="#0c7987"/><stop offset="1" stop-color="#a87b28"/></linearGradient>
+            </defs>
+            <g class="coverage-zones" stroke="#0a8190" stroke-width="1.3">
+              <ellipse cx="375" cy="654" rx="242" ry="129" fill="url(#coverage)"/>
+              <ellipse cx="832" cy="460" rx="260" ry="147" fill="url(#coverage)"/>
+              <ellipse cx="1200" cy="550" rx="232" ry="132" fill="url(#coverage)"/>
+              <ellipse cx="1378" cy="735" rx="220" ry="122" fill="url(#coverage)"/>
+              <path d="M133 654C133 170 617 170 617 654" fill="url(#coverage)"/>
+              <path d="M572 460C572 30 1092 30 1092 460" fill="url(#coverage)"/>
+              <path d="M968 550C968 110 1432 110 1432 550" fill="url(#coverage)"/>
+              <path d="M1158 735C1158 305 1598 305 1598 735" fill="url(#coverage)"/>
+            </g>
+            <g class="node-links" stroke="#087e8d" stroke-width="2" stroke-dasharray="5 8">
+              <path d="M375 654L832 460 1200 550 1378 735"/>
+              <path d="M375 654L1200 550M832 460L1378 735"/>
+            </g>
+            <g class="sense-lines" stroke="#137f8c" stroke-width="1.7" stroke-dasharray="4 7">
+              <path d="M375 654L1032 326M832 460L1032 326M1200 550L1032 326"/>
+            </g>
+            <g class="flight-track">
+              <path d="M1430 154C1370 181 1270 200 1170 250S1080 297 1032 326" stroke="#a77931" stroke-width="2" stroke-dasharray="3 8"/>
+              <circle cx="1246" cy="218" r="4" fill="#a77931"/><circle cx="1164" cy="254" r="4" fill="#a77931"/>
+            </g>
+            <g class="track-brackets" stroke="#087e8d" stroke-width="2.7">
+              <path d="M1006 311v-13h15m27 0h15v13m0 32v13h-15m-27 0h-15v-13"/>
+            </g>
+            <g class="nodes" fill="#087e8d" stroke="white" stroke-width="3">
+              <circle cx="375" cy="654" r="10"/><circle cx="832" cy="460" r="10"/><circle cx="1200" cy="550" r="10"/><circle cx="1378" cy="735" r="10"/>
+            </g>
+            <g class="handover-line" stroke="url(#handover)" stroke-width="2" stroke-dasharray="6 8"><path d="M1140 350L1140 430M1140 530L1140 720"/></g>
+            <g class="air-object" transform="translate(1032 326)">
+              <circle r="7" fill="#fff" stroke="#9c6c23" stroke-width="2"/>
+              <circle r="2.5" fill="#9c6c23"/>
+            </g>
+          </svg>
+          <span class="place place-airport">Airport</span>
+          <span class="place place-city">Public spaces</span>
+          <span class="place place-energy">Energy &amp; industry</span>
+          <span class="place place-port">Port</span>
+          <span class="object-tag">Unidentified object</span>
+          <span class="node-tag">Passive sensor node</span>
+          <div class="track-label"><span class="micro-label">DE ORB OS · EXAMPLE TRACK</span><strong>Drone detected</strong><span>Fused sensor evidence</span><small>Operator assessment required</small></div>
+          <div class="authority-tag"><span class="gate-icon" aria-hidden="true">!</span><span><strong>Authority decision</strong><small>No automatic engagement</small></span></div>
+          <div class="partner-tag"><span class="micro-label">RESPONSE LAYER</span><strong id="partner-title">Protective procedures</strong><small id="partner-type">Notify · monitor · protect</small></div>
+        </div>
+        <div class="visual-caption"><span class="caption-dot"></span><span id="scene-caption">Four complementary sensing inputs, brought together at the site.</span></div>
+        <div class="scene-bottom"><span id="scene-footnote">Illustrative node design</span><span id="scene-layer">THE NODE / START HERE</span></div>
+      </div>
+
+      <div class="chapters">
+        <section class="chapter chapter-node" id="chapter-node" data-step="-1" aria-labelledby="title-node">
+          <div class="chapter-copy">
+            <span class="eyebrow">WHAT IS INSTALLED ON SITE?</span>
+            <h1 id="title-node">Meet the node.<br><em>See the network.</em></h1>
+            <p class="lead">The physical starting point for airspace awareness.</p>
+            <p>A compact, site-mounted node brings four passive sensing inputs together. Its observations feed into DE ORB OS alongside those from other nodes.</p>
+            <div class="node-to-network" aria-label="Site-mounted nodes feed DE ORB OS to form a shared airspace picture">
+              <span>Site-mounted nodes</span><b aria-hidden="true">→</b><strong>DE ORB OS</strong><b aria-hidden="true">→</b><span>Shared airspace picture</span>
+            </div>
+            <p class="node-dome-note">The domes in the story represent sensing coverage. Connected nodes combine their observations across the site.</p>
+            <a class="story-start" href="#chapter-1">See the nodes across a site <span aria-hidden="true">↓</span></a>
+          </div>
+        </section>
+        <section class="chapter" id="chapter-1" data-step="0" aria-labelledby="title-1">
+          <div class="chapter-copy intro-copy">
+            <span class="eyebrow">A CIVILIAN-FIRST VISION</span>
+            <h2 class="setting-title" id="title-1">Safer skies.<br><em>Everyday life.</em></h2>
+            <p class="lead">A passive detection layer for the places we depend on.</p>
+            <p>DE ORB is developing a network that brings drone activity into view, helping people make informed decisions about civilian airspace.</p>
+            <a class="story-start" href="#chapter-2">Explore the protection layers <span aria-hidden="true">↓</span></a>
+            <span class="intro-note">Detection at the core. Authority at every response.</span>
+          </div>
+        </section>
+
+        <section class="chapter" id="chapter-2" data-step="1" aria-labelledby="title-2">
+          <div class="chapter-copy">
+            <span class="eyebrow">01 / DETECT</span>
+            <h2 id="title-2">Listen to the sky.<br><em>Without transmitting.</em></h2>
+            <p>Distributed nodes gather complementary evidence. The passive sensing concept uses signals already present in the environment.</p>
+            <div class="sensor-list" aria-label="Four passive sensing modalities">
+              <div><span class="sensor-symbol">RF</span><span><strong>RF monitoring</strong><small>Existing radio signals, where present</small></span></div>
+              <div><span class="sensor-symbol">PR</span><span><strong>Passive radar</strong><small>Reflections of external transmissions</small></span></div>
+              <div><span class="sensor-symbol">EO</span><span><strong>Optical cameras</strong><small>Visual evidence of an object</small></span></div>
+              <div><span class="sensor-symbol">AC</span><span><strong>Acoustic sensing</strong><small>Sound signatures in the environment</small></span></div>
+            </div>
+            <p class="annotation">Passive describes the sensing layer. Site communications and any optional transmitting hardware require their own assessment.</p>
+          </div>
+        </section>
+
+        <section class="chapter" id="chapter-3" data-step="2" aria-labelledby="title-3">
+          <div class="chapter-copy">
+            <span class="eyebrow">02 / UNDERSTAND</span>
+            <h2 id="title-3">Many observations.<br><em>One clearer picture.</em></h2>
+            <p>DE ORB OS combines sensor inputs to detect, classify and maintain a track. The purpose is to give operators usable evidence, including uncertainty.</p>
+            <div class="fusion-strip"><span>Sensor inputs</span><span aria-hidden="true">→</span><strong>DE ORB OS</strong><span aria-hidden="true">→</span><span>Fused track</span></div>
+            <div class="evidence-list"><span>Object classification</span><span>Track history</span><span>Confidence &amp; uncertainty</span></div>
+            <div class="editorial-note"><strong>A detection is a starting point.</strong><p>An observed drone is not automatically a threat. Sensor evidence and the operating context inform the next decision.</p></div>
+          </div>
+        </section>
+
+        <section class="chapter" id="chapter-4" data-step="3" aria-labelledby="title-4">
+          <div class="chapter-copy">
+            <span class="eyebrow amber">03 / DECIDE</span>
+            <h2 id="title-4">An alert.<br><em>Then a human decision.</em></h2>
+            <p>The operator reviews the track against site procedures and coordinates with the competent authorities.</p>
+            <ol class="decision-list">
+              <li><span>1</span><div><strong>Assess the evidence</strong><small>Validate the observation and its context.</small></div></li>
+              <li><span>2</span><div><strong>Inform and coordinate</strong><small>Follow the site's aviation and security procedures.</small></div></li>
+              <li><span>3</span><div><strong>Confirm legal authority</strong><small>Check powers, permissions and civilian safety.</small></div></li>
+            </ol>
+            <div class="decision-note"><strong>If engagement is not authorised</strong><span>Continue monitoring, notify the relevant authority and follow protective procedures.</span></div>
+          </div>
+        </section>
+
+        <section class="chapter chapter-response" id="chapter-5" data-step="4" aria-labelledby="title-5">
+          <div class="chapter-copy">
+            <span class="eyebrow">04 / RESPOND</span>
+            <h2 id="title-5">The right response.<br><em>Only when authorised.</em></h2>
+            <p>Where lawful and approved, DE ORB's track information could support an integrated partner response. The authorised operator retains the decision.</p>
+            <span class="options-label">EXPLORE POTENTIAL PARTNER OPTIONS</span>
+            <div class="response-tabs" role="tablist" aria-label="Potential response categories">
+              <button type="button" role="tab" aria-selected="true" id="option-monitor" aria-controls="response-detail" data-option="monitor">Protective action</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" id="option-interceptor" aria-controls="response-detail" data-option="interceptor">Interceptor drones</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" id="option-kinetic" aria-controls="response-detail" data-option="kinetic">Other kinetic effectors</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" id="option-laser" aria-controls="response-detail" data-option="laser">Laser</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" id="option-microwave" aria-controls="response-detail" data-option="microwave">High-power microwave</button>
+            </div>
+            <div class="response-detail" id="response-detail" role="tabpanel" aria-labelledby="option-monitor" tabindex="0">
+              <span class="response-category" id="response-category">NON-ENGAGEMENT RESPONSE</span>
+              <h3 id="response-title">Protect people and operations</h3>
+              <p id="response-description">Notify the competent authority, continue monitoring and apply the site's protective procedures. A physical intervention is not a prerequisite for useful detection.</p>
+              <span class="response-constraint" id="response-constraint">Subject to the site's approved procedures.</span>
+            </div>
+            <p class="annotation">Potential integration categories, not claims of deployed DE ORB effectors. Lasers and microwaves are directed energy; they are not kinetic effects.</p>
+          </div>
+        </section>
+      </div>
+
+      <nav class="chapter-nav" aria-label="Story chapters">
+        <a href="#chapter-node" data-nav="-1" data-short="Node" aria-current="step">The node</a>
+        <a href="#chapter-1" data-nav="0" data-short="Sites"><span>00</span> Civilian airspace</a>
+        <a href="#chapter-2" data-nav="1" data-short="Detect"><span>01</span> Detect</a>
+        <a href="#chapter-3" data-nav="2" data-short="Fuse"><span>02</span> Understand</a>
+        <a href="#chapter-4" data-nav="3" data-short="Decide"><span>03</span> Decide</a>
+        <a href="#chapter-5" data-nav="4" data-short="Act"><span>04</span> Respond</a>
+        <button class="motion-control" id="motion-control" type="button" aria-pressed="false" aria-label="Pause ambient animation">Ⅱ <span>Motion</span></button>
+      </nav>
+    </div>
+
+    <section class="policy-section" id="policy" aria-labelledby="policy-heading">
+      <div class="policy-heading"><span class="eyebrow">THE EUROPEAN CONTEXT</span><h2 id="policy-heading">Built around civilian protection.<br><em>Governed at deployment.</em></h2><p>The ambition is to support deployment under applicable EU and national requirements. This illustration does not establish certification or permission to engage.</p></div>
+      <div class="policy-grid">
+        <article><span class="policy-number">01</span><h3>Detection</h3><p>Assess the actual sensor and communications configuration against applicable spectrum, equipment, privacy and data-protection requirements.</p><a href="https://eur-lex.europa.eu/eli/dir/2014/53/oj/eng" target="_blank" rel="noopener noreferrer">Radio Equipment Directive ↗</a><a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng" target="_blank" rel="noopener noreferrer">General Data Protection Regulation ↗</a></article>
+        <article><span class="policy-number">02</span><h3>Decision</h3><p>Use clear responsibilities, evidence review and coordination with the relevant authority. EU policy supports preparedness, detection and coordinated responses.</p><a href="https://digital-strategy.ec.europa.eu/en/news/commission-presents-action-plan-counter-drone-threats" target="_blank" rel="noopener noreferrer">European Commission · February 2026 ↗</a></article>
+        <article><span class="policy-number">03</span><h3>Response</h3><p>Countermeasure powers depend on national law and the authorised actor. A European policy framework is not a blanket permission for private operators to use effectors.</p><a href="https://data.consilium.europa.eu/doc/document/ST-14394-2023-INIT/en/pdf" target="_blank" rel="noopener noreferrer">EU communication on drone threats ↗</a></article>
+      </div>
+      <footer><a class="wordmark" href="#chapter-node">DE <span>ORB</span></a><span>Detect. Understand. Act.</span><a href="#chapter-node">Back to the story ↑</a></footer>
+    </section>
+  </main>
+  <noscript><div class="noscript-note">Read the chapters below to follow the concept. JavaScript enables the changing visual layers and response-category controls.</div></noscript>
+</body>
+</html>
