@@ -40,19 +40,6 @@
   <!-- HERO -->
   <section class="hero" id="top">
     <div class="hero-bg"></div>
-    <div class="radar-stage" aria-hidden="true">
-      <div class="radar">
-        <div class="circle" style="transform:scale(.28)"></div>
-        <div class="circle" style="transform:scale(.5)"></div>
-        <div class="circle" style="transform:scale(.72)"></div>
-        <div class="circle" style="transform:scale(.94)"></div>
-        <div class="ring" style="animation-delay:0s"></div>
-        <div class="ring" style="animation-delay:2s"></div>
-        <div class="ring" style="animation-delay:4s"></div>
-        <div class="sweep"></div>
-        <div class="core"></div>
-      </div>
-    </div>
     <div class="wrap hero-inner">
       <div class="hero-max">
         <p class="eyebrow reveal">PASSIVE COUNTER-UAS INTELLIGENCE</p>
@@ -65,6 +52,54 @@
         </div>
       </div>
     </div>
+
+    <!-- HERO CONSOLE: custom sensor-mesh visual, not used anywhere else on the site -->
+    <div class="hero-console-wrap reveal" id="heroConsoleWrap">
+      <div class="hero-console" id="heroConsole" role="button" tabindex="0" aria-label="Interactive preview of DE ORB's sensor-fusion network. Click to trigger a manual scan.">
+        <div class="console-grid"></div>
+        <div class="console-vignette"></div>
+        <div class="console-scanline"></div>
+
+        <svg class="console-mesh" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <line class="mesh-line" x1="51" y1="57" x2="20" y2="22"/>
+          <line class="mesh-line" x1="51" y1="57" x2="78" y2="18"/>
+          <line class="mesh-line" x1="51" y1="57" x2="15" y2="74"/>
+          <line class="mesh-line" x1="51" y1="57" x2="82" y2="68"/>
+        </svg>
+
+        <div class="mesh-node" style="left:20%;top:22%"><span class="tip">NODE-01</span></div>
+        <div class="mesh-node" style="left:78%;top:18%"><span class="tip">NODE-02</span></div>
+        <div class="mesh-node" style="left:15%;top:74%"><span class="tip">NODE-03</span></div>
+        <div class="mesh-node" style="left:82%;top:68%"><span class="tip">NODE-04</span></div>
+        <div class="mesh-node hub" style="left:51%;top:57%"><span class="tip">DE ORB OS · FUSION HUB</span></div>
+
+        <div class="track-trail t4" aria-hidden="true"><div class="glyph"></div></div>
+        <div class="track-trail t3" aria-hidden="true"><div class="glyph"></div></div>
+        <div class="track-trail t2" aria-hidden="true"><div class="glyph"></div></div>
+        <div class="track-trail t1" aria-hidden="true"><div class="glyph"></div></div>
+        <div class="console-ping" aria-hidden="true"></div>
+
+        <span class="console-tag live"><span class="rec"></span>SIMULATION</span>
+        <span class="console-hint" id="consoleHint">Click to scan</span>
+        <p class="console-note">Illustrative network preview — not live sensor data.</p>
+      </div>
+
+      <div class="console-readouts">
+        <div class="readout-chip">
+          <span class="rl">RF ACTIVITY</span>
+          <div class="wave-bars"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div class="readout-chip">
+          <span class="rl">NODES ONLINE</span>
+          <span class="rv"><span class="readout-dot"></span>04 / 04</span>
+        </div>
+        <div class="readout-chip">
+          <span class="rl">SESSION UPTIME</span>
+          <span class="rv" id="uptimeReadout">00:00</span>
+        </div>
+      </div>
+    </div>
+
     <div class="scroll-cue">SCROLL</div>
   </section>
 
@@ -277,7 +312,7 @@
         <h2>Sense. Fuse. Decide.</h2>
       </div>
       <div class="steps-wrap">
-        <div class="steps-line line-draw"></div>
+        <div class="steps-line line-draw"><span class="steps-pulse" aria-hidden="true"></span></div>
         <div class="steps stagger">
           <div class="step reveal"><span class="badge">01</span>
             <h3>Sense</h3>
